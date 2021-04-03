@@ -61,6 +61,8 @@
             <index>true</index>
             <manifest>
               <addClasspath>true</addClasspath>
+              <!--<mainClass>com.mkyong.core.App</mainClass>-->
+              <classpathPrefix>dependency-jars/</classpathPrefix>
             </manifest>
             <manifestEntries>
               <mode>development</mode>
