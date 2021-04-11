@@ -12,7 +12,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 public class MoneyOneParamAnnotationTest {
 
   /**
-   * Constrcucts 3-times the instances of {@link Money} with 3 different amounts and checks the
+   * Constructs 3-times the instances of {@link Money} with 3 different amounts and checks the
    * amount is equal as expected.
    *
    * @param amount the amount, for example 10

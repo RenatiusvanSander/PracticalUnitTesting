@@ -13,9 +13,6 @@ public class MoneyTest {
   /**
    * Tests the constructor sets amount and currency.
    */
-  /**
-   * package public
-   */
   @Test
   void constructorShouldSetAmountAndCurrency() {
     Money money = new Money(10, "USD");
