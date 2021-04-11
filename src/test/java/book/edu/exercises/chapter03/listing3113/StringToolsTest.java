@@ -2,12 +2,9 @@ package book.edu.exercises.chapter03.listing3113;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-import book.edu.chapter03.listing32.Money;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.ValueSource;
 
 /**
  *JUnit tests for the {@link StringTools}
