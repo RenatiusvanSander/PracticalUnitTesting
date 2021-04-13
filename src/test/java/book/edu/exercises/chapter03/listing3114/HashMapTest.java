@@ -8,12 +8,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- *JUnit tests for {@link HashMap}
+ * JUnit tests for {@link HashMap}
  */
 public class HashMapTest {
 
   /**
-   *the map for tests, key is instance of {@link CarPlate} and value is instance of {@link Car}
+   * the map for tests, key is instance of {@link CarPlate} and value is instance of {@link Car}
    */
   private HashMap<CarPlate, Car> map;
 
@@ -25,6 +25,9 @@ public class HashMapTest {
     map = new HashMap<>();
   }
 
+  /**
+   * Tests what is put into is also retrieved by get.
+   */
   @Test
   void putShouldBeRetrievedByGet() {
     String licencePlate = "HH-SV-1234";
@@ -36,6 +39,9 @@ public class HashMapTest {
     assertThat(map.get(carPlate)).isEqualTo(car);
   }
 
+  /**
+   * Put two cars into hash map with same key retrieves second car by get.
+   */
   @Test
   void putTwiceShouldRetrieveSecondCarByGet() {
     String licencePlate1st = "HH-SV-1234";
