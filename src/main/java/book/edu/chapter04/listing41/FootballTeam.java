@@ -3,7 +3,7 @@ package book.edu.chapter04.listing41;
 /**
  * This instance represents a simplified Foot ball team.
  */
-public class FootballTeam {
+public class FootballTeam implements  Comparable<FootballTeam> {
 
   /**
    * the won games of this team
@@ -40,4 +40,8 @@ public class FootballTeam {
     this.gamesWon = gamesWon;
   }
 
+  @Override
+  public int compareTo(FootballTeam otherTeam) {
+    return 0;
+  }
 }

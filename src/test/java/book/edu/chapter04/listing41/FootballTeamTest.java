@@ -13,9 +13,14 @@ import org.junit.jupiter.params.provider.ValueSource;
  */
 public class FootballTeamTest {
 
+  /**
+   * expected games won asnumber
+   */
   private static final int THREE_GAMES_WON = 3;
 
-  /** a number */
+  /**
+   * a number
+   */
   private static final int ANY_NUMBER = 123;
 
   /**
@@ -36,6 +41,11 @@ public class FootballTeamTest {
     assertThat(team.getGamesWon()).as("number of games won").isEqualTo(THREE_GAMES_WON);
   }
 
+  /**
+   * Tests parameterized the games won
+   *
+   * @param nbOfGamesWon number of won games
+   */
   @ParameterizedTest
   @ValueSource(ints = {0, 1, 3, 10})
   void constructorShouldSetGamesWon(int nbOfGamesWon) {
@@ -44,6 +54,11 @@ public class FootballTeamTest {
     assertThat(team.getGamesWon()).as("Number of games won").isEqualTo(nbOfGamesWon);
   }
 
+  /**
+   * Tests for IllegalArgumentException
+   *
+   * @param illegalNbOfGames illegal numbers
+   */
   @ParameterizedTest
   @ValueSource(ints = {-10, -1})
   void constructorShouldThrowExceptionForIllegalGamesNb(int illegalNbOfGames) {
@@ -52,6 +67,9 @@ public class FootballTeamTest {
     });
   }
 
+  /**
+   * Tests the instance is also Comparable
+   */
   @Test
   void shouldBePossibleToCompareTeams() {
     FootballTeam team = new FootballTeam(ANY_NUMBER);
