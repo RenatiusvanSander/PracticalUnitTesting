@@ -4,6 +4,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 /**
  * Unit test for {@link FootballTeamTest}
@@ -28,5 +30,13 @@ public class FootballTeamTest {
     FootballTeam team = new FootballTeam(3);
 
     assertThat(team.getGamesWon()).as("number of games won").isEqualTo(THREE_GAMES_WON);
+  }
+
+  @ParameterizedTest
+  @ValueSource(ints = {0, 1, 3, 10})
+  void constructorShouldSetGamesWon(int nbOfGamesWon) {
+    FootballTeam team = new FootballTeam(nbOfGamesWon);
+
+    assertThat(team.getGamesWon()).as("Number of games won").isEqualTo(nbOfGamesWon);
   }
 }
