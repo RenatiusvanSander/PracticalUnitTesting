@@ -1,6 +1,7 @@
 package book.edu.chapter04.listing41;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOfType;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -38,5 +39,13 @@ public class FootballTeamTest {
     FootballTeam team = new FootballTeam(nbOfGamesWon);
 
     assertThat(team.getGamesWon()).as("Number of games won").isEqualTo(nbOfGamesWon);
+  }
+
+  @ParameterizedTest
+  @ValueSource(ints = {-10, -1})
+  void constructorShouldThrowExceptionForIllegalGamesNb(int illegalNbOfGames) {
+    assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(() -> {
+      new FootballTeam(illegalNbOfGames);
+    });
   }
 }
