@@ -15,6 +15,7 @@ public class FootballTeamTest {
    */
   @BeforeEach
   void setUp() {
+    // empty for now
   }
 
   /**
@@ -24,6 +25,6 @@ public class FootballTeamTest {
   void constructorShouldSetGamesWon() {
     FootballTeam team = new FootballTeam(3);
 
-    assertThat(team.getGamesWon()).isEqualTo(3);
+    assertThat(team.getGamesWon()).as("number of games won").isEqualTo(3);
   }
 }
