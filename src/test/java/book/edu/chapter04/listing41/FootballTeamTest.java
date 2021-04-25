@@ -10,6 +10,8 @@ import org.junit.jupiter.api.Test;
  */
 public class FootballTeamTest {
 
+  private static final int THREE_GAMES_WON = 3;
+
   /**
    * Sets up
    */
@@ -25,6 +27,6 @@ public class FootballTeamTest {
   void constructorShouldSetGamesWon() {
     FootballTeam team = new FootballTeam(3);
 
-    assertThat(team.getGamesWon()).as("number of games won").isEqualTo(3);
+    assertThat(team.getGamesWon()).as("number of games won").isEqualTo(THREE_GAMES_WON);
   }
 }
