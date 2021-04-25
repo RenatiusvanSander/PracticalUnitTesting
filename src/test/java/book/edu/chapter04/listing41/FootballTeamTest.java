@@ -15,6 +15,9 @@ public class FootballTeamTest {
 
   private static final int THREE_GAMES_WON = 3;
 
+  /** a number */
+  private static final int ANY_NUMBER = 123;
+
   /**
    * Sets up
    */
@@ -47,5 +50,12 @@ public class FootballTeamTest {
     assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(() -> {
       new FootballTeam(illegalNbOfGames);
     });
+  }
+
+  @Test
+  void shouldBePossibleToCompareTeams() {
+    FootballTeam team = new FootballTeam(ANY_NUMBER);
+
+    assertThat(team).isInstanceOf(Comparable.class);
   }
 }
