@@ -98,4 +98,15 @@ public class FootballTeamTest {
 
     assertThat(team_2.compareTo(team_3)).isLessThan(0);
   }
+
+  /**
+   * Tests the equalitz.
+   */
+  @Test
+  void teamsWithSameNumberOfMatchesWonShouldBeEqual() {
+    FootballTeam teamA = new FootballTeam(2);
+    FootballTeam teamB = new FootballTeam(2);
+
+    assertThat(teamA.compareTo(teamB)).isEqualTo(0);
+  }
 }
