@@ -3,7 +3,7 @@ package book.edu.chapter04.listing41;
 /**
  * This instance represents a simplified Foot ball team.
  */
-public class FootballTeam implements  Comparable<FootballTeam> {
+public class FootballTeam implements Comparable<FootballTeam> {
 
   /**
    * the won games of this team
@@ -42,12 +42,6 @@ public class FootballTeam implements  Comparable<FootballTeam> {
 
   @Override
   public int compareTo(FootballTeam otherTeam) {
-    if(this.gamesWon > otherTeam.getGamesWon()) {
-      return 1;
-    } else if(gamesWon < otherTeam.getGamesWon()) {
-      return -1;
-    }
-
-    return 0;
+    return this.gamesWon - otherTeam.getGamesWon();
   }
 }
